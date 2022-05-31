@@ -5,16 +5,24 @@ import { AppComponent } from './app.component';
 import { ProfileComponent } from './profile/profile.component';
 import { PostComponent } from './post/post.component';
 import { CommentaireComponent } from './commentaire/commentaire.component';
+import { RegisterComponent } from './auth/register/register.component';
+import { LoginComponent } from './auth/login/login.component';
+import { RouterOutletModule } from './router-outlet.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProfileComponent,
     PostComponent,
-    CommentaireComponent
+    CommentaireComponent,
+    RegisterComponent,
+    LoginComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterOutletModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
