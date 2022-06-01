@@ -9,7 +9,7 @@ import { PostComponent } from './post/post.component';
 import { CommentaireComponent } from './commentaire/commentaire.component';
 
 const routes: Routes=[
-  {path:'', component:ProfileComponent},
+  {path:'', component:PostComponent},
   {path:'auth/register', component :RegisterComponent},
   {path:'auth/login', component :LoginComponent},
   {path:'profiles', component:ProfileComponent},

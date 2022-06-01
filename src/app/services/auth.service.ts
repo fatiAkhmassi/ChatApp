@@ -19,12 +19,28 @@ export class AuthService {
       "role": user.role
     });
 
-    var requestOptions = {
+    let requestOptions = {
       method: 'POST',
       headers: myHeaders,
-      body: raw,
+      body: raw
     };
-
     return fetch(environment.apiGateway + environment.apiAuth + "/register", requestOptions)
+  }
+
+  loginUser(userName:string, passWord:string){
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+
+    var raw = JSON.stringify({
+      "userName": userName,
+      "passWord": passWord
+    });
+
+    let requestOptions = {
+      method: 'POST',
+      headers: myHeaders,
+      body: raw
+    };
+    return fetch(environment.apiGateway + environment.apiAuth + "/login", requestOptions)
   }
 }

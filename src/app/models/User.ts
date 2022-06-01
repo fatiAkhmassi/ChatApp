@@ -1,10 +1,10 @@
 export default class User {
-    userName : String = ""
-    password : String = ""
-    role : String = ""
+    userName : string = ""
+    password : string = ""
+    role : string = ""
 
-    constructor(userName:String, password:String, role:String){
-        this.userName = userName;
+    constructor(userName:string, password:string, role:string){
+        this.userName = userName
         this.password = password
         this.role = role
     }
