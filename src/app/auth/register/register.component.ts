@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import User from 'src/app/models/User';
+import Profile from 'src/app/models/Profile';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -10,14 +10,14 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class RegisterComponent implements OnInit {
 
-  user : User = new User("","","")
+  profile : Profile = new Profile("","",new Date(),"","","")
   constructor(private authService:AuthService,private route:Router) { }
 
   ngOnInit(): void {
   }
 
   btnRegisterUser(){
-    this.authService.registerUser(this.user)
+    this.authService.registerUser(this.profile)
       .then(response => response.json())
       .then(result => {
         localStorage.setItem("token",result.token)

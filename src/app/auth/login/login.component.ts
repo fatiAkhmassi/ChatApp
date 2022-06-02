@@ -8,12 +8,12 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  userName : string = ""
+  firstName : string = ""
   passWord : string = ""  
   constructor(private authService:AuthService, private route:Router) { }
 
   btnLoginUser(){
-    this.authService.loginUser(this.userName, this.passWord)
+    this.authService.loginUser(this.firstName, this.passWord)
       .then(response => {
           console.log(response.status);
           if (400 == response.status) {
@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
       })
       .then(result => {
         (result) ? localStorage.setItem("token",result.token) : ""
-        this.userName=""
+        this.firstName=""
         this.passWord=""
         this.route.navigateByUrl("/")
       })

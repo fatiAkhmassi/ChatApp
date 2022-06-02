@@ -23,47 +23,57 @@ export class ProfileComponent implements OnInit {
   fetchProfiles(){
     this.profileService.fetchAllProfiles()
     .then(response => {
-      return response.json()
+        return response.json()
     })
     .then(result => {
-      console.table(result._embedded.profiles)
-      this.profiles = result._embedded.profiles
-    })
-    .catch(error => {
-      console.log("error")
-      console.log(error)
-    })
-  }
-  
-  btnAddProfile(){
-    this.profile={
-      firstName : this.first_name,
-      lastName : this.last_name,
-      birthDate : this.birth_date
-    }
-
-    this.profileService.addProfile(this.profile)
-    .then(response =>{
-      console.log(response.status);
-      if(400 == response.status){
-        alert("Les information entrer est incorrect")
-        return false
-      }
-      return response.json()
-    })
-    .then(result => {
-      this.first_name =""
-      this.last_name = ""
-      this.birth_date = new Date()
-      this.fetchProfiles()
+      console.log(result)
+      console.table(result)
+      this.profiles = result
     })
     .catch(error => {
       console.log("error");
-      console.log(error)
+      console.log(error);      
     })
+  }
+  
+  // btnAddProfile(){
+  //   this.profile={
+  //     firstName : this.first_name,
+  //     lastName : this.last_name,
+  //     birthDate : this.birth_date
+  //   }
+
+  //   this.profileService.addProfile(this.profile)
+  //   .then(response =>{
+  //     console.log(response.status);
+  //     if(400 == response.status){
+  //       alert("Les information entrer est incorrect")
+  //       return false
+  //     }
+  //     return response.json()
+  //   })
+  //   .then(result => {
+  //     this.first_name =""
+  //     this.last_name = ""
+  //     this.birth_date = new Date()
+  //     this.fetchProfiles()
+  //   })
+  //   .catch(error => {
+  //     console.log("error");
+  //     console.log(error)
+  //   })
+  // }
+
+  updateProfile(pro : Profile){
+    
+  }
+
+  deleteProfile(pro : Profile){
+
   }
 
   ngOnInit(): void {
+    this.fetchProfiles()
   }
 
 }

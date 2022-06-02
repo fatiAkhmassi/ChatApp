@@ -1,0 +1,15 @@
+.updateBtn{
+    font-weight: 500;
+    color: rgb(17, 94, 43);
+}
+.updateBtn:hover{
+    color: rgb(11, 156, 59);
+}
+
+.deleteteBtn{
+    font-weight: 500;
+    color: rgb(129, 27, 27);
+}
+.deleteteBtn:hover{
+    color: rgb(177, 72, 72);
+}

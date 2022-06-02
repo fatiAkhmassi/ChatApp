@@ -1,4 +1,4 @@
-<section class="vh-100 container" style="width: 70%; margin-top: -15%;">
+<section class="vh-100 container" style="width: 70%; margin-top: -10%;">
   <div class="container h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col-lg-12 col-xl-11">
@@ -12,21 +12,42 @@
                   <div class="d-flex flex-row align-items-center mb-4">
                     <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                     <div class="form-outline flex-fill mb-0">
-                      <input type="text" [(ngModel)]="user.userName" class="form-control" placeholder="Your Name" />
+                      <input type="text" [(ngModel)]="profile.firstName" class="form-control" placeholder="Your Name" />
                     </div>
                   </div>
 
                   <div class="d-flex flex-row align-items-center mb-4">
                     <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
                     <div class="form-outline flex-fill mb-0">
-                      <input type="password" [(ngModel)]="user.password" class="form-control" placeholder="Password"/>
+                      <input type="text" [(ngModel)]="profile.lastName" class="form-control" placeholder="Laste Name"/>
                     </div>
                   </div>
                   
                   <div class="d-flex flex-row align-items-center mb-4">
                     <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                     <div class="form-outline flex-fill mb-0">
-                      <input type="text" [(ngModel)]="user.role" class="form-control" placeholder="Role" />
+                      <input type="date" [(ngModel)]="profile.birthDate" class="form-control" placeholder="Birth Date" />
+                    </div>
+                  </div>
+
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                      <input type="text" [(ngModel)]="profile.gender" class="form-control" placeholder="Gender"/>
+                    </div>
+                  </div>
+
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                      <input type="password" [(ngModel)]="profile.password" class="form-control" placeholder="Password"/>
+                    </div>
+                  </div>
+                  
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                      <input type="text" [(ngModel)]="profile.role" class="form-control" placeholder="Role" />
                     </div>
                   </div>
 

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
+import Profile from '../models/Profile';
 import User from '../models/User';
 
 @Injectable({
@@ -9,14 +10,17 @@ export class AuthService {
 
   constructor() { }
 
-  registerUser(user : User){
+  registerUser(profile : Profile){
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
 
     var raw = JSON.stringify({
-      "userName": user.userName,
-      "passWord": user.password,
-      "role": user.role
+      "firstName": profile.firstName,
+      "lastName": profile.lastName,
+      "birthDate": profile.birthDate,
+      "gender": profile.gender,
+      "passWord": profile.password,
+      "role": profile.role
     });
 
     let requestOptions = {
@@ -32,7 +36,7 @@ export class AuthService {
     myHeaders.append("Content-Type", "application/json");
 
     var raw = JSON.stringify({
-      "userName": userName,
+      "firstName": userName,
       "passWord": passWord
     });
 
