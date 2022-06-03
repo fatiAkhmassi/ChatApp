@@ -1,4 +1,5 @@
 export default class Profile{
+    id: number = 0
     firstName: string = ""
     lastName: string = ""
     birthDate: Date = new Date()
