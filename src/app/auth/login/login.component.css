@@ -1,0 +1,19 @@
+.login-form{
+    width: 50%; 
+    margin-top: -15%; 
+    margin-left: auto;
+}
+
+#btnSignUp{
+    text-align: center;
+    font-weight: 500;
+    color: rgb(33, 89, 172);
+}
+
+#btnSignUp:hover{
+    color: rgb(51, 126, 238);
+}
+
+.register{
+    color: black;
+}

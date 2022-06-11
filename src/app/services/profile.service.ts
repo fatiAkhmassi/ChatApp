@@ -50,6 +50,7 @@ export class ProfileService {
 
   updateProfile(profile : Profile){
     var myHeaders = new Headers();
+    myHeaders.append("Content-Type","application/json")
     if(localStorage.getItem('token')!=null){
       myHeaders.append("Authorization", localStorage.getItem('token')!);
     }
@@ -76,15 +77,16 @@ export class ProfileService {
 
   deleteProfile(id:number){
     var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
     if(localStorage.getItem('token')!=null){
       myHeaders.append("Authorization", localStorage.getItem('token')!);
-    }    
+    }
 
     var requestOptions = {
       method: 'DELETE',
       headers: myHeaders
     };
-
+    
     return fetch(environment.apiGateway+environment.apiProfiles+"/"+id, requestOptions)
   }
 }

@@ -49,23 +49,12 @@ export class ProfileComponent implements OnInit {
     this.role=pro.role
   }
 
-  deleteProfile(id : number){
-    this.profileService.deleteProfile(id)
-    .then(response =>{
-      console.log(response.status);
-      if(400 == response.status){
-        alert("L'id entrer est incorrect")
-        return false
-      }
-      return response.json()
-    })
-    .then(result => { 
-      this.fetchProfiles()
-    })
-    .catch(error => {
-      console.log("error");
-      console.log(error)
-    })
+  deleteProfile(pro : Profile){
+   
+    this.profileService.deleteProfile(pro.id)
+    .then(response => response.text())
+    .then(result => console.log(result))
+    .catch(error => console.log('error', error));
   }
 
   ngOnInit(): void {
